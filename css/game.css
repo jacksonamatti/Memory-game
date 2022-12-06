@@ -1,0 +1,64 @@
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100hv;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../imgs/bg.jpg");
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  max-width: 800px;
+  margin: 100px auto;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-color: black;
+  border-radius: 5px;
+  position: relative;
+  transition: all 400ms ease;
+  transform-style: preserve-3d;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  transition: all 400ms ease;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+.back {
+  background-image: url("../imgs/back.png");
+
+  backface-visibility: hidden;
+}
+
+.reveal-card {
+  transform: rotateY(180deg);
+}
+
+.disableCard {
+  filter: saturate(0);
+  opacity: 0.5;
+}
